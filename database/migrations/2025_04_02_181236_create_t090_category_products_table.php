@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('t100_products', function (Blueprint $table) {
-            $table->id('t100_rowid');
-            $table->string('t100_nom_product');
-            $table->text('t100_desc_product');
-            $table->decimal('t100_price_product',8,2);
-            $table->Integer('t100_stock_product');
+        Schema::create('t090_category_products', function (Blueprint $table) {
+            $table->id('t090_rowid');
+            $table->string('t090_category_name');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('t100_products');
+        Schema::dropIfExists('t090_category_products');
     }
 };

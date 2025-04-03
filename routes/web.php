@@ -17,4 +17,4 @@ Route::get('/Productos/create', [ProductsController::class, 'create'])->name('pr
 Route::post('/Productos/store', [ProductsController::class, 'store'])->name('productos.store');
 Route::get('/Productos/edit/{producto}', [ProductsController::class, 'edit'])->name('productos.edit');
 Route::put('/Productos/update/{producto}', [ProductsController::class, 'update'])->name('productos.update');
-Route::delete('/Productos/delete/{producto}', [ProductsController::class, 'destroy'])->name('productos.delete');
+Route::post('/Productos/delete/', [ProductsController::class, 'destroy'])->name('productos.delete');
