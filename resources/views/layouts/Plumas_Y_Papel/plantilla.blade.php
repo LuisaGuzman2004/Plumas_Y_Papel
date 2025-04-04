@@ -113,7 +113,7 @@
                 <li class="nav-link {{ request()->is('home')? 'active' : '' }}">
                     <a href="{{ route('home') }}">
                         <i class="material-icons">home</i>
-                        <p>Home</p>
+                        <p>Inicio</p>
                     </a>
                 </li>
                 <li class="nav-link {{ request()->is('')? 'active' : '' }}">

@@ -81,7 +81,7 @@
                                 <div class="col-sm-12 mb-3">
                                     <div class="input-group">
                                         <span class="input-group-addon">
-                                            <i class="material-icons">inventory_2</i>
+                                            <i class="material-icons">box_edit</i>
                                         </span>
                                         <div class="form-group label-floating">
                                             <label class="control-label">Stock
@@ -98,7 +98,7 @@
                                 <!-- Botón de envío -->
                                 <div class="col-sm-12 text-left">
                                     <button type="submit" class="btn btn-primary btn-block">Guardar Cambios</button>
-                                    <a href="{{route('productos.index')}}" class="btn btn-primary me-2">Cancelar</a>
+                                    <a href="{{route('productos.index')}}" class="btn btn-danger me-2">Cancelar</a>
                                 </div>
                             </div>
                         </form>

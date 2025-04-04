@@ -59,12 +59,12 @@
           </li>
           <li class="">
             <a href="{{ route('register') }}">
-              <i class="material-icons">person_add</i> Register
+              <i class="material-icons">person_add</i> Registrar
             </a>
           </li>
         <li>
           <a href="{{ route('login') }}">
-            <i class="material-icons">fingerprint</i> Login
+            <i class="material-icons">fingerprint</i> Iniciar Sesión
             
           </a>
         </li>
@@ -281,24 +281,54 @@
                 <div class="col-5">
                   <div class="img-pol-calidad">
                     <br>
-                    <p><img class="alignnone wp-image-7615 size-full" src="" alt="" width="100" height="100">  </p>
+                    <p><img class="alignnone wp-image-7615 size-full" src="assets/img/favicon.png" alt="" width="100" height="100">  </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- <div class="tab-content">
+          <div class="tab-pane" id="schedule-1">
+            <div class="card card-plain">
+                <div class="card-content">
+                  <div class="col-3">
+                    <h2><b>Contactanos</b></h2>    
+                    <span></span>   
+                  </div>
+                  <div class="col-8">
+                    <div>
+                      <center>
+                      <img  style="width: 10%; margin-left: 5px" src="assets/img/PyP-logo.png">
+                        <p>
+                          <b>Correo Electronico: atencion.pyp@plumasypapel.com</b>
+                          <br>Linea de atención: 0180056787
+                          <br>Whatsapp: 3146437351
+                        </p>
+                    </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div> -->
+
         <div class="tab-pane" id="schedule-1">
-          <div class="card card-plain">
+          <div class="card card-plain2">
             <div class="card-content">
             <center>
-                <img  style="width: 10%; margin-left: 5px" src="assets/img/PyP-logo.png">
+                <img  style="width: 15%; margin-left: 5px" src="assets/img/Contactos_PYP.png">
+                <p>
+                      <b>Correo Electronico: atencion.pyp@plumasypapel.com</b>
+                      <br>Linea de atención: 0180056787
+                      <br>Whatsapp: 3146437351
+                    </p>
             </center>
               <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5035892721726!2d-75.58551318474926!3d6.197092628589801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4682446b6fa345%3A0x4b8abeddfff91c5d!2sLaumayer%20Colombiana%20Comercializadora%20S.A.!5e0!3m2!1ses!2sco!4v1623276906760!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
             </div>
           </div>
         </div>
-
         </div>
       </div>
     </div>

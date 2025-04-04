@@ -5062,8 +5062,8 @@ be a descendant of the grid when it is being dragged.
   border-color: #f44336;
 }
 .wizard-card[data-color="rose"] .moving-tab {
-  background-color: #03637c;
-  box-shadow: 0 4px 20px 0px rgba(255, 255, 255, 0.14), 0 7px 10px -5px #0083a3;
+  background-color: #cce695;
+  box-shadow: 0 4px 20px 0px rgba(255, 255, 255, 0.14), 0 7px 10px -5px #91a665;
 }
 .wizard-card[data-color="rose"] .picture:hover {
   border-color: #fa8f03;
@@ -7183,7 +7183,7 @@ h2.title {
 .navbar .navbar-nav > li > a.btn.btn-default.dropdown-toggle, .open >
 .navbar .navbar-nav > li > a.btn.btn-default.dropdown-toggle:focus, .open >
 .navbar .navbar-nav > li > a.btn.btn-default.dropdown-toggle:hover {
-  background-color: #205F6D;
+  background-color: #bfd962;
   color: #FFFFFF;
 }
 .btn:focus, .btn:active, .btn:hover, .btn.btn-default:focus, .btn.btn-default:active, .btn.btn-default:hover,
@@ -10479,8 +10479,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .pagination > .active > span,
 .pagination > .active > span:focus,
 .pagination > .active > span:hover {
-  background-color: #fa8f03;
-  border-color: #fa8f03;
+  background-color: #91a665;
+  border-color: #91a665;
   color: #FFFFFF;
   box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
 }

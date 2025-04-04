@@ -41,12 +41,12 @@
                         </li>
                         <li class="active">
                             <a href="{{route('register')}}">
-                                <i class="material-icons">person_add</i> Register
+                                <i class="material-icons">person_add</i> Registrar
                             </a>
                         </li>
                         <li class="">
                             <a href="{{route('login')}}">
-                                <i class="material-icons">fingerprint</i> Login
+                                <i class="material-icons">fingerprint</i> Iniciar Sesión
                             </a>
                         </li>
                     </ul>

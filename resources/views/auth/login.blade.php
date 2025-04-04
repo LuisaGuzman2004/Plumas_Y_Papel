@@ -47,17 +47,6 @@
                         </div>
                         <p id="mensajeError"></p>
                     </div>
-                    <div class="social text-center">
-                            <button class="btn btn-just-icon btn-round btn-facebook">
-                                <i class="fa fa-facebook"></i>
-                            </button>
-                            <button class="btn btn-just-icon btn-round btn-linkedin">
-                                <i class="fa fa-linkedin"></i>
-                            </button>
-                            <button class="btn btn-just-icon btn-round btn-google">
-                                <i class="fa fa-google"></i>
-                            </button>
-                        </div>
                 </div>
                 <div class="footer text-center">
                     <br>

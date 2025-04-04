@@ -293,7 +293,7 @@
                         <div class="wizard-footer">
                             <div class="pull-right">
                                 <a href="{{route('productos.index')}}" class="button">
-                                    <input  type='button' class='btn btn-fill btn-rose btn-wd' value="CANCELAR"/>
+                                    <input  type='button' class='btn btn-fill btn-danger btn-wd' value="CANCELAR"/>
                                 </a>
                                 <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
                                 <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' value="Guardar"/>
