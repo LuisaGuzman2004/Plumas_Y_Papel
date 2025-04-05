@@ -13,6 +13,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //RUTAS DE PRODUCTOS
 Route::get('/Productos/index', [ProductsController::class, 'index'])->name('productos.index');
+Route::get('/Productos/get_products', [ProductsController::class, 'get_products'])->name('productos.get_products');
 Route::get('/Productos/create', [ProductsController::class, 'create'])->name('productos.create');
 Route::post('/Productos/store', [ProductsController::class, 'store'])->name('productos.store');
 Route::get('/Productos/edit/{producto}', [ProductsController::class, 'edit'])->name('productos.edit');

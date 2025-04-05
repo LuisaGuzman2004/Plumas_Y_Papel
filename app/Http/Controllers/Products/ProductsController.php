@@ -35,6 +35,15 @@ class ProductsController extends Controller
         return view('Plumas_Y_Papel.Productos.index', compact('productos'));
     }
 
+    public function get_products()
+    {
+        $productos = Products::select('t100_products.*')
+        ->get();
+        //dd($productos);
+
+        return response()->json($productos);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -104,7 +104,7 @@
             <ul class="nav">
                 @if (auth()->user()->id == 1)
                 <li class="nav-link {{ request()->is('')? 'active' : '' }}">
-                    <a href="">
+                    <a href="{{route('productos.index')}}">
                         <i style="color: #f39200" class="material-icons">star</i>
                         <p>Administrador<b> P y P</b></p>
                     </a>
@@ -118,25 +118,31 @@
                 </li>
                 <li class="nav-link {{ request()->is('')? 'active' : '' }}">
                     <a data-toggle="collapse" href="#Inicio">
-                        <i class="material-icons">groups</i>
-                        <p>Plumas y Papel
+                        <i class="material-icons">store</i>
+                        <p>Catalogo
                             <b class="caret"></b>
                         </p>
                     </a>
                     <div class="nav-link {{ request()->is('')? 'collapse in' : 'collapse' }}" id="Inicio">
                         <ul class="nav">
                         <li class="nav-link {{ request()->is('')? 'active' : '' }}">
-                            <a href="">Compañia</a>
+                            <a href="">Tienda</a>
                         </li>
                         <li class="nav-link {{ request()->is('')? 'active' : '' }}">
-                            <a href="{{route('productos.index')}}">Catalogo <b>PyP</b></a> 
+                            <a href="">Favoritos</a> 
                         </li> 
                         <li class="nav-link {{ request()->is('')? 'active' : '' }}">
-                            <a href="">Contacto</a>
+                            <a href="">Pedidos</a>
                         </li>
                     </ul>
                 </div>
             </li>
+            <li class="nav-link {{ request()->is('home')? 'active' : '' }}">
+                    <a href="{{ route('home') }}">
+                        <i class="material-icons">contacts</i>
+                        <p>Contanctanos <b>PyP</b></p>
+                    </a>
+                </li>
         </ul>
     </div>
 </div>

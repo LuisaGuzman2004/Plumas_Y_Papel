@@ -11363,12 +11363,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "emptyTable": "No hay datos disponibles en la tabla"
+			 *          "emptyTable": "Cargando datos 🔄..."
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No hay datos disponibles en la tabla",
+			"sEmptyTable": "Cargando datos 🔄...",
 
 
 			/**
