@@ -173,11 +173,27 @@ class ProductsController extends Controller
      */
     public function edit(Request $request, Products $producto)
     {
-        //s
         //Imprimimos el producto a editar antes de pasarlo a la vista
         //dd($producto);
+        //Traemos las categorias disponibles
+        $categorias = ProductCategories::select('t090_category_products.*')
+        ->get();
 
-        return view('Plumas_Y_Papel.Productos.edit', compact('producto'));
+        //Traemos las imagenes guardardaas que se relacionen con el producto
+        $imagenes = Files::select('t080_files.*')
+        ->where('t080_files.t100_product_id','=',$producto->t100_rowid)
+        ->get();
+
+        //dd($imagenes);
+        
+
+        $vendedor = User::select('users.*')
+        ->where('users.id','=',$producto->t100_seller)
+        ->get();
+
+        //dd($vendedor);
+
+        return view('Plumas_Y_Papel.Productos.edit', compact('producto','vendedor','categorias','imagenes'));
     }
 
     /**
@@ -186,16 +202,73 @@ class ProductsController extends Controller
     public function update(Request $request, Products $producto)
     {
         //
-        //dd($producto);
+        //dd($request);
 
         //Guardamos los campos que vienen en el $request en la tabla de la DB de productos
-        $producto->t100_nom_product = $request->nombre_producto;
-        $producto->t100_desc_product = $request->descripcion_producto;
-        $producto->t100_price_product = $request->precio_producto;
-        $producto->t100_stock_product = $request->stock_producto;
+        $producto->t100_name_product= $request->t100_name_product;
+        $producto->t100_cod_product= $request->t100_cod_product;
+        $producto->t100_desc_product = $request->t100_desc_product;
+        $producto->t100_price_product = $request->t100_price_product;
+        $producto->t100_stock_product = $request->t100_stock_product;
+        $producto->t100_status_product = $request->t100_status_product;
+        $producto->t100_publishing_policies = $request->t100_publishing_policies;
+        $producto->t090_product_category = $request->t090_product_category;
+        $producto->t100_seller = $request->t100_seller;
 
         $producto->update();
 
+            // Validamos si vienen imágenes para actualizarlas o guardar las que no estén
+            $imagenesExistentes = $request->input('img_ids', []);
+
+            // Si se sube una nueva img_1, se resetean las portadas
+            if ($request->hasFile('img_1')) {
+                Files::where('t100_product_id', $producto->t100_rowid)
+                    ->update(['t080_is_cover' => 0]);
+            }
+
+            foreach ($request->allFiles() as $key => $file) {
+                if (strpos($key, 'img_') === 0 && $request->hasFile($key)) {
+                    $existingId = $imagenesExistentes[$key] ?? null;
+                    $url = $file->store('Files', 'public');
+                    $name = $file->getClientOriginalName();
+                    $link = Storage::url($url);
+
+                    // Si es img_1, marcar como portada
+                    $esPortada = ($key === 'img_1');
+
+                    if ($existingId) {
+                        $archivo = Files::find($existingId);
+                        if ($archivo) {
+                            $archivo->t080_url = $link;
+                            $archivo->t080_name = $name;
+                            $archivo->t080_is_cover = $esPortada;
+                            $archivo->save();
+                        }
+                    } else {
+                        $archivo = new Files();
+                        $archivo->t080_url = $link;
+                        $archivo->t080_name = $name;
+                        $archivo->t100_product_id = $producto->t100_rowid;
+                        $archivo->t080_is_cover = $esPortada;
+                        $archivo->save();
+                    }
+                }
+            }
+
+            // Si no se subió img_1, pero existe, asegurar que siga siendo la portada
+            if (!$request->hasFile('img_1') && isset($imagenesExistentes['img_1'])) {
+                // Resetear portadas primero
+                Files::where('t100_product_id', $producto->t100_rowid)
+                    ->update(['t080_is_cover' => 0]);
+
+                // Marcar img_1 como portada
+                Files::where('t080_rowid', $imagenesExistentes['img_1'])
+                    ->update(['t080_is_cover' => 1]);
+            }
+
+
+
+        Session::flash('mensaje',"¡El producto se ha actualizado de manera exitosa!.");
         return redirect()->route('productos.index')->with('status', '¡Producto editado exitosamente!');
         
     }

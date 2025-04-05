@@ -39,16 +39,18 @@
                                 @foreach($productos as $items)
                                 <tr>
                                     <td>{{ $items->t100_rowid }}</td>
-                                    <td>{{ $items->t100_nom_product }}</td>
+                                    <td>{{ $items->t100_name_product }}</td>
                                     <td>{{ $items->t100_desc_product }}</td>
                                     <td>{{ $items->t100_stock_product }}</td>
                                     <td>{{ $items->t100_price_product }}</td>
                                     
                                     <td class="text-right">
+                                        <!--
                                         <a href="{{route('productos.create')}}" class="text-success">
                                             <i title="Crear producto" class="material-icons">add_circle</i>
                                         </a>
-                                        <a href="{{route('productos.edit', $items->t100_rowid)}}" class="text-warning">
+-->
+                                        <a href="{{route('productos.edit', $items->t100_rowid)}}" class="text-success">
                                             <i title="Editar producto" class="material-icons">edit</i>
                                         </a>
                                         <!--

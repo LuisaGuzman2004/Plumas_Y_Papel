@@ -491,7 +491,7 @@
     type: 'warning',
     showCancelButton: false,
     showConfirmButton: true,
-    confirmButtonColor: '#205F6D',
+    confirmButtonColor: '#5cb85c',
     cancelButtonColor: '#d33',
     cancelButtonText: 'Cancelar',
     confirmButtonText: 'Aceptar'
@@ -504,7 +504,7 @@
     display: inline-block;
     background-color: #f9f9f9;
     width: 200px;
-    color: #003c4d;
+    color: #5cb85c;
 }
 </style>
 @endif
