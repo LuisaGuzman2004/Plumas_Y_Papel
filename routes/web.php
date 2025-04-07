@@ -5,8 +5,41 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TiendaController;
 use App\Http\Controllers\PedidosController;
 
+use App\Models\Products\Products;
+use App\Models\Files;
+
+
 Route::get('/', function () {
-    return view('welcome');
+
+
+
+            //
+            $plumas = Products::select('t100_products.*','t080_files.*')
+            ->leftJoin('t080_files','t080_files.t100_product_id','=','t100_products.t100_rowid')
+            ->where('t100_products.t090_product_category','=',1)
+            ->where('t080_files.t080_is_cover', '=', 1)
+            ->get();
+    
+            $papel = Products::select('t100_products.*', 't080_files.*')
+            ->leftJoin('t080_files', 't080_files.t100_product_id', '=', 't100_products.t100_rowid')
+            ->where('t100_products.t090_product_category', '=', 2)
+            ->where('t080_files.t080_is_cover', '=', 1)
+            ->get();    
+    
+            $escritorio = Products::select('t100_products.*','t080_files.*')
+            ->leftJoin('t080_files','t080_files.t100_product_id','=','t100_products.t100_rowid')
+            ->where('t100_products.t090_product_category','=',3)
+            ->where('t080_files.t080_is_cover', '=', 1)
+            ->get();
+    
+            $arte_y_color = Products::select('t100_products.*','t080_files.*')
+            ->leftJoin('t080_files','t080_files.t100_product_id','=','t100_products.t100_rowid')
+            ->where('t100_products.t090_product_category','=',4)
+            ->where('t080_files.t080_is_cover', '=', 1)
+            ->get();
+
+
+    return view('welcome',compact('plumas','papel','escritorio','arte_y_color'));
 });
 
 Auth::routes();

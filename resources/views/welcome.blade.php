@@ -180,7 +180,7 @@
             color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
           -->
           <li>
-            <a href="#" role="tab" data-toggle="tab">
+            <a href="#catalogo" role="tab" data-toggle="tab">
               <i class="material-icons">local_mall</i> Catalogo
             </a>
           </li>
@@ -197,6 +197,160 @@
         </ul>
       </div>
       <div class="tab-content">
+
+      <div class="tab-pane" id="catalogo">
+  <section class="card card-plain">
+    <div class="card-content">
+      <div class="row">
+        <div class="col-3">
+          <span></span>
+        </div>
+        <div class="col-12">
+          <main class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <section class="card">
+                    <header class="card-header card-header-icon" data-background-color="blue">
+                      <i class="material-icons">store</i>
+                    </header>
+                    <center>
+                    <div class="card-content">
+                      <h4 class="card-title text-center">Tienda <strong>PyP</strong></h4>
+
+                      <div class="toolbar">
+                        <!-- Puedes agregar botones o acciones adicionales aquí -->
+                      </div>
+
+                      <!-- Información general -->
+                      <section class="info-general mb-4">
+                        <h3>Productos disponibles</h3>
+                        <p>El stock de todos los productos aquí mostrados está sujeto a disponibilidad.</p>
+
+                        <article class="estados">
+                          <h3>Disponibilidad</h3>
+                          <ul>
+                            <li class="primer"><span></span><strong>Disponible</strong></li>
+                            <li class="segun"><span></span><strong>Pocas unidades</strong></li>
+                            <li class="tercer"><span></span><strong>Agotado</strong></li>
+                          </ul>
+                        </article>
+                      </section>
+
+                      <!-- Carruseles de productos -->
+                      <section>
+                        <!-- Plumas -->
+                        <section class="hero-wrap mb-5">
+                          <h4><strong>Plumas</strong></h4>
+                          <div class="home-slider owl-carousel owl-theme home-slider-productos" style="height: auto !important;">
+                            @foreach($plumas as $item)
+                            <article class="product-card card card-chart text-center">
+                              <div class="card-header" data-background-color="blue">
+                                <div class="product-image-container">
+                                  <a href="{{ route('tienda.show', $item->t100_rowid) }}">
+                                    <img src="{{ asset($item->t080_url) }}" alt="Imagen del producto">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="card-content">
+                                <h5 class="card-title">{{ $item->t100_name_product }}</h5>
+                                <a href="{{ route('tienda.show', $item->t100_rowid) }}" class="btn btn-success btn-round agregar-carrito">
+                                  Agregar al carrito
+                                </a>
+                              </div>
+                            </article>
+                            @endforeach
+                          </div>
+                        </section>
+
+                        <!-- Papel -->
+                        <section class="hero-wrap mb-5">
+                          <h4><strong>Papel</strong></h4>
+                          <div class="home-slider owl-carousel owl-theme home-slider-productos" style="height: auto !important;">
+                            @foreach($papel as $item)
+                            <article class="product-card card card-chart text-center">
+                              <div class="card-header" data-background-color="blue">
+                                <div class="product-image-container">
+                                  <a href="{{ route('tienda.show', $item->t100_rowid) }}">
+                                    <img src="{{ asset($item->t080_url) }}" alt="Imagen del producto">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="card-content">
+                                <h5 class="card-title">{{ $item->t100_name_product }}</h5>
+                                <a href="{{ route('tienda.show', $item->t100_rowid) }}" class="btn btn-success btn-round agregar-carrito">
+                                  Agregar al carrito
+                                </a>
+                              </div>
+                            </article>
+                            @endforeach
+                          </div>
+                        </section>
+
+                        <!-- Escritorio -->
+                        <section class="hero-wrap mb-5">
+                          <h4><strong>Escritorio</strong></h4>
+                          <div class="home-slider owl-carousel owl-theme home-slider-productos" style="height: auto !important;">
+                            @foreach($escritorio as $item)
+                            <article class="product-card card card-chart text-center">
+                              <div class="card-header" data-background-color="blue">
+                                <div class="product-image-container">
+                                  <a href="{{ route('tienda.show', $item->t100_rowid) }}">
+                                    <img src="{{ asset($item->t080_url) }}" alt="Imagen del producto">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="card-content">
+                                <h5 class="card-title">{{ $item->t100_name_product }}</h5>
+                                <a href="{{ route('tienda.show', $item->t100_rowid) }}" class="btn btn-success btn-round agregar-carrito">
+                                  Agregar al carrito
+                                </a>
+                              </div>
+                            </article>
+                            @endforeach
+                          </div>
+                        </section>
+
+                        <!-- Arte y Color -->
+                        <section class="hero-wrap mb-5">
+                          <h4><strong>Arte y Color</strong></h4>
+                          <div class="home-slider owl-carousel owl-theme home-slider-productos" style="height: auto !important;">
+                            @foreach($arte_y_color as $item)
+                            <article class="product-card card card-chart text-center">
+                              <div class="card-header" data-background-color="blue">
+                                <div class="product-image-container">
+                                  <a href="{{ route('tienda.show', $item->t100_rowid) }}">
+                                    <img src="{{ asset($item->t080_url) }}" alt="Imagen del producto">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="card-content">
+                                <h5 class="card-title">{{ $item->t100_name_product }}</h5>
+                                <a href="{{ route('tienda.show', $item->t100_rowid) }}" class="btn btn-success btn-round agregar-carrito">
+                                  Agregar al carrito
+                                </a>
+                              </div>
+                            </article>
+                            @endforeach
+                          </div>
+                        </section>
+                      </section>
+                      <!-- Fin de carruseles -->
+
+                    </div> <!-- end card-content -->
+                    </center>
+                  </section> <!-- end card -->
+                </div> <!-- end col-md-12 -->
+              </div> <!-- end row -->
+            </div> <!-- end container-fluid -->
+          </main>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
         <div class="tab-pane" id="description-1">
           <div class="card card-plain2">
             <div class="empresa-texto-izquierdo">
@@ -289,30 +443,6 @@
           </div>
         </div>
 
-        <!-- <div class="tab-content">
-          <div class="tab-pane" id="schedule-1">
-            <div class="card card-plain">
-                <div class="card-content">
-                  <div class="col-3">
-                    <h2><b>Contactanos</b></h2>    
-                    <span></span>   
-                  </div>
-                  <div class="col-8">
-                    <div>
-                      <center>
-                      <img  style="width: 10%; margin-left: 5px" src="assets/img/PyP-logo.png">
-                        <p>
-                          <b>Correo Electronico: atencion.pyp@plumasypapel.com</b>
-                          <br>Linea de atención: 0180056787
-                          <br>Whatsapp: 3146437351
-                        </p>
-                    </center>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div> -->
 
         <div class="tab-pane" id="schedule-1">
           <div class="card card-plain2">

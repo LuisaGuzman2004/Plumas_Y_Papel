@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class TiendaController extends Controller
 {
     /**
