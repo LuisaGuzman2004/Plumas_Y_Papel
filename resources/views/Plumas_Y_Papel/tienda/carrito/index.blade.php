@@ -19,11 +19,11 @@
                         <hp>El stock de todos los productos aqui mostrados esta sujeta a disponibiidad.</hp>
                         <br>
                         <div class="botnes-pedidos mt-3 mb-4">
-                        <a href="{{ route('tienda.index') }}" class="btn btn-next btn-fill btn-rose btn-wd">Inicio</a>
-                        <a href="#" class="btn btn-next btn-fill btn-rose btn-wd">Favoritos</a>
-                        <a href="{{ route('tienda.carrito') }}" class="btn btn-next btn-fill btn-rose btn-wd">Carrito</a>
-                        <a href="#" class="btn btn-next btn-fill btn-rose btn-wd">NUEVOS</a>
-                      </div>
+                            <a href="{{ route('tienda.index') }}" class="btn btn-next btn-fill btn-rose btn-wd">Inicio</a>
+                            <a href="#" class="btn btn-next btn-fill btn-rose btn-wd">Favoritos</a>
+                            <a href="{{ route('tienda.carrito') }}" class="btn btn-next btn-fill btn-rose btn-wd">Carrito</a>
+                            <a href="#" class="btn btn-next btn-fill btn-rose btn-wd">NUEVOS</a>
+                        </div>
                         <br>
                         <article class="estados">
 
@@ -47,136 +47,59 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($productos_activos_en_carrito as $item)
                             <tr>
                                 <td>
                                     <div class="img-container">
-                                        <img src="../../assets/img/product1.jpg" alt="...">
+                                        @if( $item->t080_is_cover == 1)
+                                        <img src="{{ asset($item->t080_url) }}" alt="...">
+                                        @endif
                                     </div>
                                 </td>
                                 <td class="td-name">
-                                    <a href="#jacket">Spring Jacket</a>
+                                    <a href="{{ route('tienda.show',$item->t100_rowid)}}">{{$item->t100_name_product}}</a>
                                     <br />
-                                    <small>by Dolce&Gabbana</small>
                                 </td>
                                 <td>
-                                    Red
-                                </td>
-                                <td>
-                                    M
-                                </td>
-                                <td class="td-number text-right">
-                                    <small>&euro;</small>549
-                                </td>
-                                <td class="td-number">
-                                    1
+                                   {{$item->t100_cod_product}}
+                               </td>
+                               <td>
+                                  {{$item->t090_product_category}}
+                              </td>
+                              <td class="td-number text-right">
+                                <small>$</small> {{$item->t092_product_price}}
+                            </td>
+                            <td class="td-number">
+                                {{$item->t092_product_quantity}}
+                                    <!--
                                     <div class="btn-group">
                                         <button class="btn btn-round btn-success btn-xs"> <i class="material-icons">remove</i> </button>
                                         <button class="btn btn-round btn-success btn-xs"> <i class="material-icons">add</i> </button>
                                     </div>
-                                </td>
-                                <td class="td-number">
-                                    <small>&euro;</small>549
-                                </td>
-                                <td class="td-actions">
-                                    <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-simple">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="img-container">
-                                        <img src="../../assets/img/product2.jpg" alt="..." />
-                                    </div>
-                                </td>
-                                <td class="td-name">
-                                    <a href="#pants">Short Pants</a>
-                                    <br />
-                                    <small>by Pucci</small>
-                                </td>
-                                <td>
-                                    Purple
-                                </td>
-                                <td>
-                                    M
-                                </td>
-                                <td class="td-number">
-                                    <small>&euro;</small>499
-                                </td>
-                                <td class="td-number">
-                                    2
-                                    <div class="btn-group">
-                                        <button class="btn btn-round btn-success btn-xs"> <i class="material-icons">remove</i> </button>
-                                        <button class="btn btn-round btn-success btn-xs"> <i class="material-icons">add</i> </button>
-                                    </div>
-                                </td>
-                                <td class="td-number">
-                                    <small>&euro;</small>998
-                                </td>
-                                <td class="td-actions">
-                                    <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-simple">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="img-container">
-                                        <img src="../../assets/img/product3.jpg" alt="...">
-                                    </div>
-                                </td>
-                                <td class="td-name">
-                                    <a href="#nothing">Pencil Skirt</a>
-                                    <br />
-                                    <small>by Valentino</small>
-                                </td>
-                                <td>
-                                    White
-                                </td>
-                                <td>
-                                    XL
-                                </td>
-                                <td class="td-number">
-                                    <small>&euro;</small>799
-                                </td>
-                                <td class="td-number">
-                                    1
-                                    <div class="btn-group">
-                                        <button class="btn btn-round btn-success btn-xs"> <i class="material-icons">remove</i> </button>
-                                        <button class="btn btn-round btn-success btn-xs"> <i class="material-icons">add</i> </button>
-                                    </div>
-                                </td>
-                                <td class="td-number">
-                                    <small>&euro;</small>799
-                                </td>
-                                <td class="td-actions">
-                                    <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-simple">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="5"></td>
-                                <td class="td-total">
-                                    Total
-                                </td>
-                                <td colspan="1" class="td-price">
-                                    <small>&euro;</small>2,346
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td colspan="6"></td>
-                                <td colspan="2" class="text-right">
-                                    <button type="button" class="btn btn-success btn-round">Complete Purchase <i class="material-icons">keyboard_arrow_right</i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                                -->
+                            </td>
+                            <td class="td-number">
+                                <small>$</small>{{$item->t092_total_product_price}}
+                            </td>
+                            <td class="td-actions">
+                                <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-simple">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </td>
+                        </tr>
+                        @endforeach
+                        <tr>
+                            <td colspan="6"></td>
+                            <td colspan="2" class="text-right">
+                                <button type="button" class="btn btn-warning btn-round">Completar compra <i class="material-icons">keyboard_arrow_right</i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 </div>

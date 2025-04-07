@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('t093_order_purchase', function (Blueprint $table) {
             $table->id('t093_rowid');
             $table->uuid('t093_uuid')->unique();
-            $table->unsignedBigInteger('t092_customer');
-            $table->foreign('t092_customer','fk_order_product_user')->references('id')->on('users')->onDelete('restrict')->onUpdate('cascade');
+            $table->unsignedBigInteger('t093_customer');
+            $table->foreign('t093_customer','fk_order_product_user')->references('id')->on('users')->onDelete('restrict')->onUpdate('cascade');
             $table->date('t093_purchase_date');
             $table->integer('t093_order_price');
             $table->integer('t093_order_status')->default(1);

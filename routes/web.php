@@ -26,3 +26,5 @@ Route::post('/Productos/delete/', [ProductsController::class, 'destroy'])->name(
 Route::get('/Tienda/index', [TiendaController::class, 'index'])->name('tienda.index');
 Route::get('/Tienda/carrito', [TiendaController::class, 'carrito'])->name('tienda.carrito');
 Route::get('/Tienda/show/{producto}', [TiendaController::class, 'show'])->name('tienda.show');
+
+Route::post('/Tienda/send_products', [TiendaController::class, 'sendProducts'])->name('tienda.send_products');

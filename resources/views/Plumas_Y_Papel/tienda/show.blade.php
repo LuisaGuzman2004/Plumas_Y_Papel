@@ -99,7 +99,9 @@
                                         </div>
 
                                         <div class="input-group text-center">
-                                            <a href="#" class="btn btn-warning btn-round">Agregar al carrito</a>
+                                            <input type="number" value="1" id="cant_product" min="1" max="20">
+                                            <a href="#" class="btn btn-warning btn-round" onclick="addShop({{$producto->t100_rowid}})">Agregar al carrito</a>
+                                            <a href="{{ route('tienda.carrito')}}" class="btn btn-success btn-round">Ver Carrito</a>
                                         </div>
                                     </div>
 
@@ -196,6 +198,47 @@
             });
         }
     });
+
+    const routeSendProducts = "{{ route('tienda.send_products') }}";
+    const _token_           = "{{ csrf_token() }}";
+
+    const addShop = (product_id) => {
+
+        let product_code  = $('#t100_cod_product').val();
+        let product_cant  = $('#cant_product').val();
+        let product_price = $('#t100_price_product').val();
+        sendProducts(product_id, product_code, product_cant, product_price);
+
+    }
+
+    const sendProducts = (product_id, product_code, product_cant, product_price) => {
+
+        console.log(product_id, product_code, product_cant, product_price);
+
+        $.ajax({
+            url: routeSendProducts,
+            method: 'POST',
+            data: {
+                _token        : _token_,
+                product_id    : product_id,
+                product_code  : product_code,
+                product_cant  : product_cant,
+                product_price : product_price
+            },
+            success: function(response) {
+
+                if (response) {
+                    alert('Producto agregado!.');
+                }
+
+            },
+            error: function(error) {
+                console.error('Error al obtener productos:', error);
+            }
+        });
+
+    }
+
 </script>
 
 
