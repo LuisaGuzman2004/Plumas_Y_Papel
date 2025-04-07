@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png" />
-        <link rel="icon" type="image/png" href="{{asset('assets/img/PyP-logo.png')}}" />
+        <link rel="icon" type="image/png" href="{{asset('assets/img/Logo_PyP.jpg')}}" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         @if (auth()->user()->id == 1)
         <title> Plumas y Papel | Administrador</title>
@@ -142,7 +142,7 @@
             <li class="nav-link {{ request()->is('')? 'active' : '' }}">
                     <a href="{{ route('home') }}">
                         <i class="material-icons">contacts</i>
-                        <p>Contanctanos <b>P y P</b></p>
+                        <p>Contactanos <b>P y P</b></p>
                     </a>
                 </li>
         </ul>
