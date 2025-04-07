@@ -81,18 +81,28 @@
                             <td class="td-number">
                                 <small>$</small>{{$item->t092_total_product_price}}
                             </td>
+                            <!--
                             <td class="td-actions">
                                 <button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-simple">
                                     <i class="material-icons">close</i>
                                 </button>
                             </td>
+-->
                         </tr>
                         @endforeach
                         <tr>
                             <td colspan="6"></td>
                             <td colspan="2" class="text-right">
-                                <button type="button" class="btn btn-warning btn-round">Completar compra <i class="material-icons">keyboard_arrow_right</i></button>
+                                <button type="button" class="btn btn-warning btn-round">
+                                   Proximamente compras con tarjeta <i class="material-icons">keyboard_arrow_right</i>
+                                </button>
+                                <a href="https://api.whatsapp.com/send?phone=573146437351&text=Completa%20compra%20en%20Plumas%20y%20Papel." 
+                                target="_blank" 
+                                class="btn btn-success btn-round ml-2">
+                                    <i class="material-icons">chat</i> Completar compra por whatsapp
+                                </a>
                             </td>
+
                         </tr>
                     </tbody>
                 </table>

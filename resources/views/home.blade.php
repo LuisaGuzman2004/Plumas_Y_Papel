@@ -33,7 +33,7 @@
                     <button type="button" class="btn btn-danger btn-link fix-broken-card">
                       <i class="material-icons">build</i> ¡RECONSTRUIR!
                     </button>
-                    <a href="https://wa.link/7ughta" target="_blank" class="btn btn-primary">Contactar</a>
+                    <a href="https://api.whatsapp.com/send?phone=573146437351" target="_blank" class="btn btn-primary">Contactar</a>
                     <a href="{{route('tienda.index')}}" class="btn btn mb1 bg-blue">ver más</a>
                   </div>
                   <h4 class="card-title">

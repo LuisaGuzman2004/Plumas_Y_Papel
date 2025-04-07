@@ -3,6 +3,7 @@
 use App\Http\Controllers\Products\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TiendaController;
+use App\Http\Controllers\PedidosController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,7 +25,11 @@ Route::post('/Productos/delete/', [ProductsController::class, 'destroy'])->name(
 
 //RUTAS DE TIENDA
 Route::get('/Tienda/index', [TiendaController::class, 'index'])->name('tienda.index');
+Route::get('/Tienda/favoritos', [TiendaController::class, 'favoritos'])->name('tienda.favoritos');
 Route::get('/Tienda/carrito', [TiendaController::class, 'carrito'])->name('tienda.carrito');
 Route::get('/Tienda/show/{producto}', [TiendaController::class, 'show'])->name('tienda.show');
 
 Route::post('/Tienda/send_products', [TiendaController::class, 'sendProducts'])->name('tienda.send_products');
+
+//PEDIDOS
+Route::get('/Pedidos/index', [PedidosController::class, 'index'])->name('Pedidos.index');

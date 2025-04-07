@@ -8,11 +8,13 @@
         <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png" />
         <link rel="icon" type="image/png" href="{{asset('assets/img/Logo_PyP.jpg')}}" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <!--
         @if (auth()->user()->id == 1)
         <title> Plumas y Papel | Administrador</title>
         @else
-        <title> Plumas y Papel | Cliente</title>
+        <title> Plumas y Papel</title>
         @endif
+-->
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
         <meta name="viewport" content="width=device-width" />
         <!-- Canonical SEO -->
@@ -108,7 +110,7 @@
             </div>
             <ul class="nav">
                 @if (auth()->user()->id == 1)
-                <li class="nav-link {{ request()->is('')? 'active' : '' }}">
+                <li class="nav-link {{ request()->is('Productos/index')? 'active' : '' }}">
                     <a href="{{route('productos.index')}}">
                         <i style="color: #f39200" class="material-icons">star</i>
                         <p>Administrador<b> P y P</b></p>
@@ -128,13 +130,13 @@
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="nav-link {{ request()->is('Tienda/index','Tienda/carrito','Tienda/show/*')? 'collapse in' : 'collapse' }}" id="Inicio">
+                    <div class="nav-link {{ request()->is('Tienda/index','Tienda/carrito','Tienda/show/*','Tienda/favoritos','Pedidos/index')? 'collapse in' : 'collapse' }}" id="Inicio">
                         <ul class="nav">
-                        <li class="nav-link {{ request()->is('Tienda/index','Tienda/carrito','Tienda/show/*')? 'active' : '' }}">
+                        <li class="nav-link {{ request()->is('Tienda/index','Tienda/carrito','Tienda/show/*','Tienda/favoritos')? 'active' : '' }}">
                             <a href="{{ route('tienda.index')}}">Tienda</a>
                         </li>
-                        <li class="nav-link {{ request()->is('')? 'active' : '' }}">
-                            <a href="">Pedidos</a>
+                        <li class="nav-link {{ request()->is('Pedidos/index')? 'active' : '' }}">
+                            <a href="{{ route('Pedidos.index') }}">Pedidos</a>
                         </li>
                     </ul>
                 </div>

@@ -30,28 +30,36 @@ class TiendaController extends Controller
     public function index()
     {
         //
-        $lapiceros = Products::select('t100_products.*','t080_files.*')
+        $plumas = Products::select('t100_products.*','t080_files.*')
         ->leftJoin('t080_files','t080_files.t100_product_id','=','t100_products.t100_rowid')
         ->where('t100_products.t090_product_category','=',1)
         ->where('t080_files.t080_is_cover', '=', 1)
         ->get();
 
-        $cuadernos = Products::select('t100_products.*', 't080_files.*')
+        $papel = Products::select('t100_products.*', 't080_files.*')
         ->leftJoin('t080_files', 't080_files.t100_product_id', '=', 't100_products.t100_rowid')
         ->where('t100_products.t090_product_category', '=', 2)
         ->where('t080_files.t080_is_cover', '=', 1)
         ->get();    
 
-        //dd($cuadernos);
-
-        $libros = Products::select('t100_products.*','t080_files.*')
+        $escritorio = Products::select('t100_products.*','t080_files.*')
         ->leftJoin('t080_files','t080_files.t100_product_id','=','t100_products.t100_rowid')
         ->where('t100_products.t090_product_category','=',3)
         ->where('t080_files.t080_is_cover', '=', 1)
         ->get();
 
+        $arte_y_color = Products::select('t100_products.*','t080_files.*')
+        ->leftJoin('t080_files','t080_files.t100_product_id','=','t100_products.t100_rowid')
+        ->where('t100_products.t090_product_category','=',4)
+        ->where('t080_files.t080_is_cover', '=', 1)
+        ->get();
 
-        return view('Plumas_Y_Papel.Tienda.index', compact('cuadernos','lapiceros','libros'));
+        return view('Plumas_Y_Papel.Tienda.index', compact('plumas','papel','escritorio','arte_y_color'));
+    }
+
+    public function favoritos()
+    {
+        return view('Plumas_Y_Papel.Tienda.favoritos');
     }
 
     public function sendProducts(Request $request)
