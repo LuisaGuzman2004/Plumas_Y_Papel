@@ -50,6 +50,11 @@
         <!-- ESTILOS PERZONALIZADOS -->
          <link rel="stylesheet" href="{{asset('assets\landing\css\custom.css')}}">
 
+         <!-- ESTILOS DEL CARRUSEL-->
+        <link rel="stylesheet" href="{{ asset('assets/landing/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/landing/css/owl.carousel-cartas.min.css') }}">
+        <!-- FIN ESTILOS CARRUSEL-->
+
     </head>
 
     <body class="Hola">
@@ -116,31 +121,28 @@
                         <p>Inicio</p>
                     </a>
                 </li>
-                <li class="nav-link {{ request()->is('')? 'active' : '' }}">
+                <li class="nav-link {{ request()->is('Tienda/index')? 'active' : '' }}">
                     <a data-toggle="collapse" href="#Inicio">
                         <i class="material-icons">store</i>
                         <p>Catalogo
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="nav-link {{ request()->is('')? 'collapse in' : 'collapse' }}" id="Inicio">
+                    <div class="nav-link {{ request()->is('Tienda/index','Tienda/carrito','Tienda/show/*')? 'collapse in' : 'collapse' }}" id="Inicio">
                         <ul class="nav">
-                        <li class="nav-link {{ request()->is('')? 'active' : '' }}">
-                            <a href="">Tienda</a>
+                        <li class="nav-link {{ request()->is('Tienda/index','Tienda/carrito','Tienda/show/*')? 'active' : '' }}">
+                            <a href="{{ route('tienda.index')}}">Tienda</a>
                         </li>
-                        <li class="nav-link {{ request()->is('')? 'active' : '' }}">
-                            <a href="">Favoritos</a> 
-                        </li> 
                         <li class="nav-link {{ request()->is('')? 'active' : '' }}">
                             <a href="">Pedidos</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            <li class="nav-link {{ request()->is('home')? 'active' : '' }}">
+            <li class="nav-link {{ request()->is('')? 'active' : '' }}">
                     <a href="{{ route('home') }}">
                         <i class="material-icons">contacts</i>
-                        <p>Contanctanos <b>PyP</b></p>
+                        <p>Contanctanos <b>P y P</b></p>
                     </a>
                 </li>
         </ul>
@@ -433,6 +435,16 @@
 <script src="{{ asset('assets/js/demo.js') }}"></script>
 <!-- SCRIPT BOTON TOGGLE-->
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+
+<!-- SRCRIPS DE SCROLL-->
+<script src="{{ asset('assets/landing/js/jquery-migrate-3.0.1.min.js') }}"></script>
+<script src="{{ asset('assets/landing/js/jquery.stellar.min.js') }}"></script>
+<script src="{{ asset('assets/landing/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/landing/js/main.js') }}"></script>
+<!-- FIN SRCRIPS DE SCROLL--> 
+
 
 <!--GLOBAl-SCRIPTS-->
 @yield('code-scripts')

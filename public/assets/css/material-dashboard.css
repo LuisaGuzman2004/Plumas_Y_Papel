@@ -30,6 +30,100 @@
  *               Buddha Bless:  "No Bugs"
  *
  * ========================================================= */
+
+
+
+/* ESTILO IMAGENES DE CARTAS DE TIENDA */
+.product-image-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 10px; /* deja un margen visual interno */
+}
+
+.product-image-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border: 1px solid #ccc; /* borde alrededor de la imagen */
+  border-radius: 0;        /* sin esquinas redondeadas */
+  padding: 2px;            /* opcional: para que no toque el borde del borde :) */
+  background-color: #fff;  /* fondo blanco detrás si la imagen tiene transparencia */
+}
+
+@media (max-width: 768px) {
+  .product-image-container {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image-container {
+    height: 120px;
+  }
+}
+
+/* NUEVO: para que <a> no afecte los estilos de la imagen */
+.product-image-container a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product-image-container a img {
+  display: block;
+}
+
+/*FIN ESTILOS DE IMAGENES DE CARTAS DE TIENDA*/
+
+/*ESTILO PARA NAV DE IMAGENES DE DETALLE DE PRODUCTOS*/
+.miniatura-nav-horizontal {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.miniatura-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  flex: 0 0 auto;
+}
+
+.miniatura-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-product-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  .miniatura-item {
+      width: 40px;
+      height: 40px;
+  }
+}
+
+.miniatura-activa {
+  border: 3px solid #cce695;
+  border-radius: 4px;
+}
+
+/*FIN ESTILO PARA NAV DE IMAGENES DE DETALLE DE PRODUCTOS*/
  .campos_ogligatorios{
   color:red;
 }

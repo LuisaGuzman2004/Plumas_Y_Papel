@@ -32,9 +32,9 @@ const llenadoDeDatosEnLaPichiTabla = (productos) => {
                 <td>${producto.t100_stock_product}</td>
                 <td>${producto.t100_price_product}</td>
                 <td class="text-right">
-                    <a href="/productos/${producto.t100_rowid}/edit" class="text-success">
-                        <i title="Editar producto" class="material-icons">edit</i>
-                    </a>
+                <a href="/Productos/edit/${producto.t100_rowid}" class="text-success">
+                    <i title="Editar producto" class="material-icons">edit</i>
+                </a>
                     <a href="#" onclick="eliminarProducto('${producto.t100_rowid}')" class="text-danger">
                         <i title="Eliminar Producto" class="material-icons">delete</i>
                     </a>

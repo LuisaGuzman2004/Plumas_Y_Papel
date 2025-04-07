@@ -1,12 +1,6 @@
 @extends('layouts.Plumas_Y_Papel.plantilla')
 
 @section('content')
-
-<!-- ESTILOS DEL CARRUSEL-->
-<link rel="stylesheet" href="{{ asset('assets/landing/css/animate.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/landing/css/owl.carousel-cartas.min.css') }}">
-<!-- FIN ESTILOS CARRUSEL-->
-
 <div class="content">
   <div class="container-fluid">
     <div class="row">
@@ -143,15 +137,5 @@
     <!-- end row -->
   </div>
 </div>
-
-<!-- SRCRIPS DE SCROLL-->
-<!-- SRCRIPS DE SCROLL-->
-<script src="{{ asset('assets/landing/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/landing/js/jquery-migrate-3.0.1.min.js') }}"></script>
-<script src="{{ asset('assets/landing/js/jquery.stellar.min.js') }}"></script>
-<script src="{{ asset('assets/landing/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('assets/landing/js/main.js') }}"></script>
-<!-- FIN SRCRIPS DE SCROLL--> 
-<!-- FIN SRCRIPS DE SCROLL--> 
 @endsection
 

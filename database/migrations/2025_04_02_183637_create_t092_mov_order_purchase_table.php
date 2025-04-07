@@ -17,7 +17,10 @@ return new class extends Migration
             $table->foreign('t100_product','fk_mov_order_product')->references('t100_rowid')->on('t100_products')->onDelete('restrict')->onUpdate('cascade');
             $table->string('t092_code_product');
             $table->integer('t092_product_quantity');
+            $table->unsignedBigInteger('t093_order');
+            $table->foreign('t093_order','fk_mov_order')->references('t093_rowid')->on('t093_order_purchase')->onDelete('restrict')->onUpdate('cascade');
             $table->integer('t092_product_price');
+            $table->integer('t092_total_product_price');
             $table->date('t092_purchase_date');
             $table->integer('t092_status')->default(1);
             $table->timestamps();

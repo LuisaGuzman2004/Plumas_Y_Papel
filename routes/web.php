@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Products\ProductsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TiendaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +20,9 @@ Route::post('/Productos/store', [ProductsController::class, 'store'])->name('pro
 Route::get('/Productos/edit/{producto}', [ProductsController::class, 'edit'])->name('productos.edit');
 Route::put('/Productos/update/{producto}', [ProductsController::class, 'update'])->name('productos.update');
 Route::post('/Productos/delete/', [ProductsController::class, 'destroy'])->name('productos.delete');
+
+
+//RUTAS DE TIENDA
+Route::get('/Tienda/index', [TiendaController::class, 'index'])->name('tienda.index');
+Route::get('/Tienda/carrito', [TiendaController::class, 'carrito'])->name('tienda.carrito');
+Route::get('/Tienda/show/{producto}', [TiendaController::class, 'show'])->name('tienda.show');
